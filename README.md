@@ -6,6 +6,12 @@
 sudo apt install python3.12-venv
 ```
 
+## Iniciar o venv
+
+```bash
+python3 -m venv venv
+```
+
 ## Ativar o venv
 
 ```bash
