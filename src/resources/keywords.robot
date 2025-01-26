@@ -3,6 +3,7 @@ Documentation       Arquivo de keywords reutilizáveis para automação do front
 
 Library             Browser
 Library             Collections
+Resource            actions.robot
 
 
 *** Variables ***
@@ -27,35 +28,10 @@ Open Browser To Signup Page
     New Context
     New Page    ${BASE_URL}/signup
 
-Fill Login Form
-    [Documentation]    Preenche o formulário de login.
-    ...    Argumentos:
-    ...    - ${username}: Nome do usuário.
-    ...    - ${password}: Senha do usuário.
-    [Arguments]    ${username}    ${password}
-    Fill Text    [name="username"]    ${username}
-    Fill Text    [name="password"]    ${password}
-
-Fill Signup Form
-    [Documentation]    Preenche o formulário de cadastro.
-    ...    Argumentos:
-    ...    - ${username}: Nome do usuário.
-    ...    - ${email}: E-mail do usuário.
-    ...    - ${password}: Senha do usuário.
-    [Arguments]    ${username}    ${email}    ${password}
-    Fill Text    [name="username"]    ${username}
-    Fill Text    [name="email"]    ${email}
-    Fill Text    [name="password"]    ${password}
-
-Submit Form
-    [Documentation]    Submete o formulário atual clicando no botão "Enviar".
-    Click    text="Enviar"
-
-Verify Page Contains Text
-    [Documentation]    Verifica se um texto específico está presente na página.
-    [Arguments]    ${text}
-    Log To Console    ${text}
-
 Close All Browsers
     [Documentation]    Fecha o navegador e limpa os recursos.
+    Capture Screenshot If Failed
     Close Browser
+
+Capture Screenshot If Failed
+    IF    '${TEST STATUS}' == 'FAIL'    Take Screenshot

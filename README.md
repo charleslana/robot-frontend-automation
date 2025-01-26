@@ -57,3 +57,7 @@ robot --outputdir reports --loglevel TRACE:INFO src/tests
 ## Extensões para o vscode
 
 [Robot Framework Language Server](https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp)
+
+## Documentação do Robot Framework + Playwright
+
+[Browser](https://marketsquare.github.io/robotframework-browser/Browser.html)
